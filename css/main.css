@@ -1,0 +1,614 @@
+*::-webkit-input-placeholder {
+  color: #666;
+  opacity: 1;
+}
+*:-moz-placeholder {
+  color: #666;
+  opacity: 1;
+}
+*::-moz-placeholder {
+  color: #666;
+  opacity: 1;
+}
+*:-ms-input-placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+  
+}
+body input:required:valid,
+body textarea:required:valid {
+  
+}
+body {
+  font-family: "RobotoRegular", sans-serif;
+  font-size: 16px;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button:focus {
+  outline:0;
+}
+
+.row, .container, .container-fluid, .col-md-12 {
+  margin: 0;
+  padding: 0;
+}
+
+/****** Body ******/
+.shifted {
+  transform: translateX(350px);
+  transition: transform 0.8s ease;
+}
+
+.shifted-left {
+  transform: translateX(-350px);
+  transition: transform 0.8s ease;
+}
+
+.unshifted {
+  transform: translateX(0);
+  transition: transform 0.8s ease; 
+  overflow: visible;
+}
+
+.blocked {
+  overflow: hidden;
+}
+
+/******** Header **********/
+.header {
+  position: relative;
+}
+
+/****** Side menu *****/
+.side_menu {
+  background-color: #fff;
+  position: fixed;
+  z-index: 999; 
+  bottom: 0;
+  top:0;
+  width: 400px;
+  transition: transform 0.4s ease;
+  transform: translateX(-100%);
+}
+
+
+.side_menu ul li a {
+  color: #999;
+  font-size: 14px;
+  padding: 5px;
+  text-transform: uppercase;
+  transition: color 0.5s ease;
+}
+
+.side_menu ul li a:hover {
+  color: #0C090A;
+}
+
+.invisible {
+  display: none;
+}
+
+/******** Side menu ul ********/
+
+.side_menu_ul {
+  padding: 55px 0px 20px 10px;
+  margin-left: 75px;
+}
+
+.side_menu_ul li {
+  margin: 25px 5px;
+}
+
+
+/***** Modification side menu ul *****/
+.side_mod_ul {
+  overflow-y: scroll;
+}
+
+.side_mod_ul li {
+  text-align: center;
+}
+
+.side_mod_ul figure {
+  opacity: 0;
+}
+
+.side_mod_ul li img {
+  height: auto;
+  width: 260px;
+}
+
+.side_mod_ul li h3 {
+  margin: 5px 0 0 0;
+}
+
+.side_mod_ul li p {
+  text-transform: none;
+  margin: 0px;
+}
+
+
+/****** Mobile menu icon ******/
+.mob_menu_icon {
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  overflow: hidden;
+  width: 50px;
+  height: 50px;
+  font-size: 0;
+  z-index: 1000;
+  text-indent: -9999px;
+  position: fixed;
+  display: block;
+  top: 4px;
+}
+
+
+.mob_menu_icon span {
+  display: block;
+  top: 20px;
+  left: 10px;
+  right: 10px;
+  height: 5px;
+  background: #000;
+  position: absolute;
+}
+
+.mob_menu_icon span::before,
+.mob_menu_icon span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: #000;
+  content: "";
+}
+
+.mob_menu_icon span::before {
+  top: -12px;
+}
+
+.mob_menu_icon span::after {
+  bottom: -12px;
+}
+
+.mob_menu_icon--x {
+  background-color: transparent;
+}
+
+
+.mob_menu_icon--x span::before,
+.mob_menu_icon--x span::after {
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s;
+}
+
+.mob_menu_icon--x span::before {
+  transition-property: top, transform;
+}
+
+.mob_menu_icon--x span::after {
+  transition-property: bottom, transform;
+}
+
+.mob_menu_icon--x.is-active {
+  background-color: transparent;
+}
+
+.mob_menu_icon--x.is-active span {
+  background: none;
+}
+
+.mob_menu_icon--x.is-active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.mob_menu_icon--x.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.mob_menu_icon--x.is-active span::before,
+.mob_menu_icon--x.is-active span::after {
+  transition-delay: 0s, 0.3s;
+}
+
+/****** Mobile menu ******/
+.mob_menu {
+  background-color: #fff;
+  position: fixed;
+  z-index: 999; 
+  bottom: 0;
+  top:40px;
+  transition: transform 0.4s ease;
+  width: 400px;
+}
+
+
+.mob_menu li {
+  text-align: center;
+}
+
+.toggleMenu, .toggleMod, .toggleDealers {
+  border-bottom: 1px solid cyan;
+  padding: 20px 0;  
+}
+
+.mob_menu img {
+  height: auto;
+  width: 260px;
+}
+
+/****** Mobile menu Modifications ******/
+.mob_menu-mod {
+  text-align: center;
+  height: 500px;
+  overflow-y: scroll;
+}
+
+ul.mob_menu-mod, ul.mob_menu-menu {
+  display: none;
+}
+
+
+/******* Mobile Menu Dealers ********/
+.mob_menu-dealers li {
+  padding: 10px 20px;
+}
+
+.mob_menu-dealers li a {
+  color: #337ab7 !important;
+}
+
+
+/***** Mobile Menu submenu *****/
+.mob_menu-menu, .mob_menu-mod, .mob_menu-dealers {
+  padding: 25px 0;
+  margin: 0;
+}
+
+.mob_menu-menu li {
+  padding: 10px 0;
+}
+
+
+
+/***** Navigation *****/
+.nav_top {
+  background-color: rgba(255,255,255,0.9);
+  height: 55px;
+  padding: 0px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+.nav_top ul {
+  padding: 0px 40px;
+}
+
+.nav_top li {
+  display: inline-block;
+}
+
+.nav_top li a {
+  color: #000;
+  font-size: 14px;
+  padding: 5px 10px;
+  opacity: .7;
+  text-transform: uppercase;
+  transition: color 0.5s ease;
+}
+
+.nav_top li a:hover {
+  color: #726E6D;
+}
+
+.nav_top li.right {
+  float: right;
+}
+
+.logo {
+  position: fixed;
+  top: 15px;
+  left: 50%;
+  margin-left: -45px;
+  z-index: 999;
+}
+
+.logo img {
+  height: 90px; 
+  width: 90px;
+}
+
+/****** Side menu Dealers ******/
+.side_menu-dealers {
+  background-color: #fff;
+  position: fixed;
+  z-index: 999; 
+  bottom: 0;
+  top:0;
+  width: 400px;
+  transition: transform 0.4s ease;
+  transform: translateX(100%);
+  right: 0;
+}
+
+.side_menu-dealers ul {
+  padding: 35px 0px 20px 30px;
+  overflow-y: scroll;
+}
+
+.side_menu-dealers ul li {
+  padding: 15px 0px;
+}
+
+.side_menu-dealers ul li span::before, .mob_menu-dealers li span::before {
+  content: "Tel.: ";
+}
+
+.shifted-left {
+  transform: translateX(0%);
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  left: 30px;
+}
+
+.close:hover {
+  cursor: pointer;
+}
+
+
+/********* Sections ************/
+.invisible {
+  visibility: hidden;
+}
+
+.ads_header {
+  color: #fff;
+  font-family: "RobotoLight";
+  font-size: 45px;
+  opacity: 0;
+  position: absolute;
+  text-transform: uppercase;
+  left: 50px;
+  bottom: 15%;
+}
+
+
+/***** Buttons  *****/
+button.btn_ads {
+  background: #6698FF;
+  border: 0;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 13px;
+  height: 50px;
+  padding: 0;
+  position: absolute;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+  left: 50px;
+  width: 200px;
+  bottom: 12%;
+  opacity: 0;
+}
+
+button.btn_ads:hover {
+  background: #82CAFF;
+}
+
+/******* FadeIn & fadeOut effects for buttons and headings *******/
+.fadeIn {
+  animation-name: fadeIn;
+  animation-delay: .2s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.delay {
+    animation-delay: .3s;
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/******* Animation delay for vehicles images in menu ********/
+.delayOne {
+  animation-delay: .5s;
+}
+
+.delayTwo {
+  animation-delay: .4s;
+}
+
+.delayThree {
+  animation-delay: .3s;
+}
+
+.delayFour {
+  animation-delay: .2s;
+}
+/****** Section Tempt ******/
+.ads_vehicle {
+  position: relative;
+}
+
+.tempt_vehicle_image {
+  height: 0;
+    padding-bottom: 50%;
+    background-image: url(../images/tempt.jpg);
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+/******* Section Desire *******/
+.desire_vehicle_image {
+  height: 0;
+    padding-bottom: 50%;
+    background-image: url(../images/desire.jpg);
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+/******* Section Drive *******/
+.drive_vehicle_image {
+  height: 0;
+    padding-bottom: 50%;
+    background-image: url(../images/drive.jpg);
+    background-position: center center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+/********** Section Info ************/
+.info_bgr {
+  position: relative;
+}
+
+.info_bgr img {
+  position: fixed;
+  width: 100%;
+  z-index: -20;
+}
+
+.info_content {
+  margin: 0 auto;
+  padding: 5% 4%;
+  width: 92%;
+}
+
+.mainBlock {
+  opacity: 0;
+}
+
+.mainArticle h2 {
+  text-align: center;
+  padding-bottom: 4%;
+  font-family: "RobotoLight";
+  font-size: 30px;
+}
+
+.mainArticle figure {
+  overflow-x: hidden;
+  padding: 15px 0px;
+}
+
+.mainArticle figure img {
+  width: 100%;
+}
+
+.bottomBlock {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.bottomBlock figcaption {
+  padding: 15px 30px;
+  background: #fff;
+  overflow: hidden;
+  height: 240px;
+}
+
+.leftBlock {
+  opacity: 0;
+  padding-left: 0px;
+}
+
+.rightBlock {
+  opacity: 0;
+  padding-right: 0px;
+}
+
+.leftArticle img, .rightArticle img {
+  width: 100%;
+}
+
+.mainArticle figcaption {
+  padding: 15px 30px;
+  background: #fff;
+  overflow: hidden;
+}
+
+/****** Footer *******/
+.footer {
+  background: #fff;
+  text-align: center;
+  height: 60px;
+  width: 100%;
+}
+
+.footer_menu, .footer_social {
+  margin: 0;
+  padding: 15px 30px;
+  text-transform: uppercase;
+}
+
+.footer_menu li, .footer_social li {
+  display: inline;
+  padding: 0 10px;
+}
+
+.footer_menu li a, .footer_social li a {
+  color: #000;
+  font-family: "RobotoLight";
+  font-size: 14px;
+}
+
+.footer_social img {
+  width: 30px;
+  height: 30px;
+}
+
+
+
+
